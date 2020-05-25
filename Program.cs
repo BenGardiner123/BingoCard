@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BingoCard
 {
@@ -6,64 +7,129 @@ namespace BingoCard
     {
         static void Main(string[] args)
         {
-
+            Card c1  = new Card();
+            Console.WriteLine("Welcome to Bingo");
+            Console.WriteLine("Please enter your name ");
+            Console.WriteLine("Please enter your selcection");
+            Console.WriteLine("1. Create New Bingo Card");
+            Console.WriteLine("2. Exit");
+            
+            Console.WriteLine("To creeate your game please enter the size of the board");
+            Console.WriteLine("the board size must be a sqaure number for the board to be created");
+            Console.WriteLine("For example 4, 9, 16, 25, etc...");
+            Console.WriteLine("The actual numbers on the card are seqential from 1 - max");
+            Console.WriteLine("Now please enter your board size");
 
 
 
         }
+
+        
     }
 
-    class Menu {
+    public class Menu {
 
-        public string option1;
-        public string option2;
-        public string option3;
+        ///im not sure what the attributes of menu are yet
 
             
     ///======================== constructor
 
-    public Menu()
-    {
+        public Menu()
+        {
+           
+        }
+
+        public string startMenu()
+        {
+           
+        }
+
+        public string NewGameMenu() 
+        {
+            Console.WriteLine("To creeate your game please enter the size of the board");C
+            Console.WriteLine("the board size must be a sqaure number for the board to be created");
+            Console.WriteLine("For example 4, 9, 16, 25, etc...");
+            Console.WriteLine("The actual numbers on the card are seqential from 1 - max");
+            Console.WriteLine("Now please enter your board size");
+            string v = Console.ReadLine();
+            
+
+        }
+    }
+
+    public class Card {
+
+        public int min;
+        public int max;
         
-    }
+        public List<Card> gameSize; 
 
-     public Menu(string menuType)
-    {
-        /// i thinkthere will be a different typeof nmenu avauiable here
-
-
-    }
-    
-
-    }
-
-    class Card {
-
-        public int min
-        public int max
 
         /// something for the grid framework herer
 
 
         public Card()
         {
-            
+
         }
 
-        public Card(int min, int max)
+        public int Card(int intmin, int intmax)
         {
-            /// Card creation ()
-            /// when you create a card it will the create a table absed on the min anbd max numbers
-            ///so regardless of the start number the framework should be the same  = a grid 
+           this.min = intmin;
+           this.max = intmax;
+           
 
-
-
-            /// The card will be an array with the top of colum B is length of col A +1 - when they pick  to cross off we have to find the nu,ber at that position or search for th  nubmer and change it to an "x"
-
+            ///create a board
             
         }
 
+        
+    }
+     class Player{
+
+
+            // attributes
+            string playerName
+
+            // constructor
+
+            // functions
+
+        }
+
+        class Game {
+            // attributes
+            int numPlayers;
+            int numCards;
+
+            int boardSize;
+
+        public Game(int numPlayers, int numCards, int boardSize)
+        {
+            this.numPlayers = numPlayers;
+            this.numCards = numCards;
+            this.boardSize = boardSize;
+        }
+
+
+        // constructor
+
+        // functions
     }
 
 
 }
+
+
+/* var userinput = Console.ReadLine();
+            int menuCheck;
+            bool correctInput = int.TryParse(userinput, out menuCheck);
+            if (correctInput)
+            {
+                Menu();
+            }
+            else 
+            {
+                Console.Write("You have not entered a number. . .Goodbye");
+            }
+ */
