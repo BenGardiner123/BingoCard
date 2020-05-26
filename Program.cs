@@ -8,9 +8,9 @@ namespace BingoCard
     {
         static void Main(string[] args)
         {
-           var g1 = new Game(1, 1);
-           ///g1.addCard
-           var m1 = new Menu(); 
+            var g1 = new Game(1, 1);
+            ///g1.addCard
+            var m1 = new Menu(); 
 
            
            
@@ -39,84 +39,136 @@ namespace BingoCard
             Console.WriteLine("For example 2x2 = 4, 3x3 = 9, 4x4 = 16, 5x5 = 25, etc...");
             Console.WriteLine("The actual numbers on the card are seqential from 1 - max number available per card");
             Console.WriteLine("Now please enter your board size");
-            double userBoardSize = Convert.ToInt32(Console.ReadLine()); 
-            /// need tocheckhere if the number is a perfect sqaure 
-            ///https://jbwyatt.com/Code/Csharp/code/IsPerfect.html something like this - not sure where to put it tho
-
-            if (isSqr(userBoardSize))
+            int userBoardSize = Convert.ToInt32(Console.ReadLine());  
+            var truth = Menu.isSqr(userBoardSize);
+            
+            if (truth)
             {
-                g1.addCard(1);
+                g1.addCard(userBoardSize);
             }
-            else if (userinput == 2) 
+            else 
             {
-                Console.Write("You have not entered a number. . .Goodbye");
+                Console.WriteLine("Your number was not a sqaure");
                 return;
+                ///need to figure out how to make this reuturn to the top menu
+
             }
 
-        
-        
-        
-        
-     
-        
+            
+
     }
 
-     public class Menu {
+
+        
+
+        public class Menu {
+
+            public Menu()
+            {
+            }
+
+            public static bool isSqr(int num)
+            {
+            // get the square root WITH any fractional component 
+            double sq1 = Math.Sqrt( num );
+                
+            // get square root with fraction truncated by casting as an int
+            int sq2 = (int)Math.Sqrt( num );
+                
+            // compare the numbers as doubles and see if equal
+            // if the fraction part of sq1 was zero (perfect square), then 
+            // the int and the double will be equivalent
+            if ( sq1 == (double)sq2 )
+                return true;
+            return false;
+            
+
+            }
+
+        } 
+
+    
+        public class Game {
+        // attributes
+            public   int gameNum;
+            public   int numCards;
+
+            public List<int> newCard;
+
+            ////..................------------....-----------........ CONSTRUCTOR.....
+            public Game(int gnum, int ncard)
+            {
+                this.gameNum = gnum;
+                this.numCards = ncard;
+                this.newCard = new List<int>();
+            }
 
 
-        public Menu()
-        {
-           
+            // functions ----------------------------------------------------------------
+
+            public List<int> addCard(int size)
+            {
+                
+                var Card = new List<int>();
+                List<int> lists = Enumerable.Range(1, size).ToList();
+                Card = lists;
+                return lists;
+
+
+            }
+
+        
+
+
         }
 
-       
     } 
 
     
-       public class Game {
-            // attributes
-         public   int gameNum;
-         public   int numCards;
+    public class Player {
+        public string Name;
+        public List<Card> PlayerCard;
 
-         public List<int> newCard;
-
-        ////..................------------....-----------........ CONSTRUCTOR.....
-        public Game(int gameNum, int numCards)
-        {
-            this.gameNum = gameNum;
-            this.numCards = numCards;
-        }
-
-
-        // functions ----------------------------------------------------------------
-
-        public List<int> addCard(int size)
-        {
-            
-            var Card = new List<int>();
-            List<int> lists = Enumerable.Range(1, size).ToList();
-            Card = lists;
-            return lists;
-
-
+        public int markBingoNum(int num){
+            return 0;  //// this is when the player sleects a number to check off the bingo card
         }
 
 
     }
+
+    
+    public class Card {
+        public int CardSize;
+        
+        public Card(int CardSize){
+            this.CardSize = CardSize;
+        }
+
+        public int drawCard(){
+            return 0;
+        }
+
+
+    }
+
+
+
+
+
 
 
 }
 
+public class Card {
+    public int CardSize;
+    
+    public Card(int CardSize){
+        this.CardSize = CardSize;
+    }
 
-/* var userinput = Console.ReadLine();
-            int menuCheck;
-            bool correctInput = int.TryParse(userinput, out menuCheck);
-            if (correctInput)
-            {
-                Menu();
-            }
-            else 
-            {
-                Console.Write("You have not entered a number. . .Goodbye");
-            }
- */
+    public int drawCard(){
+        return 0;
+    }
+
+
+}
