@@ -18,7 +18,7 @@ namespace BingoCard
                     System.Console.WriteLine(p1.Name);
                     System.Console.WriteLine(p1.PlayerCard);
                     
-                    /* Console.WriteLine("Welcome to Bingo");
+                    Console.WriteLine("Welcome to Bingo");
                     Console.WriteLine("Please enter your name ");
                     Console.WriteLine("Please enter your selcection");
                     Console.WriteLine("1. Create New Bingo Card");
@@ -33,10 +33,10 @@ namespace BingoCard
                     {
                         Console.Write("You have not entered a number. . .Goodbye");
                         return;
-                    } */
+                    } 
 
-                    ///then go to card creation
-                /*   Console.WriteLine("To create your card please enter the size of the board");
+                    //then go to card creation
+                    Console.WriteLine("To create your card please enter the size of the board");
                     Console.WriteLine("the board size must be a sqaure number for the board to be created");
                     Console.WriteLine("For example 2x2 = 4, 3x3 = 9, 4x4 = 16, 5x5 = 25, etc...");
                     Console.WriteLine("The actual numbers on the card are seqential from 1 - max number available per card");
@@ -96,8 +96,12 @@ namespace BingoCard
     
     public class Card {
             public int CardSize;
+                min
+                max
             
             public Card(int CardSize){
+                //// generate a random number and insert into t a list, checking for uniqueness until the liust is gull
+
                 this.CardSize = CardSize;
                 var Card = new List<int>();
                 List<int> lists = Enumerable.Range(1, CardSize).ToList();
@@ -112,5 +116,3 @@ namespace BingoCard
 
 
 }
-
-
