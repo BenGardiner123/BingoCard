@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BingoCard
 {
@@ -7,114 +8,100 @@ namespace BingoCard
     {
         static void Main(string[] args)
         {
-            Card c1  = new Card();
+           var g1 = new Game(1, 1);
+           ///g1.addCard
+           var m1 = new Menu(); 
+
+           
+           
+           
             Console.WriteLine("Welcome to Bingo");
             Console.WriteLine("Please enter your name ");
             Console.WriteLine("Please enter your selcection");
             Console.WriteLine("1. Create New Bingo Card");
             Console.WriteLine("2. Exit");
-            
-            Console.WriteLine("To creeate your game please enter the size of the board");
+            ///insert menu check here
+            var userinput = 1; /* Convert.ToInt32(Console.ReadLine()); */
+            if (userinput == 1)
+            {
+                g1.addCard(1);
+            }
+            else if (userinput == 2) 
+            {
+                Console.Write("You have not entered a number. . .Goodbye");
+                return;
+            }
+
+
+            ///then go to card creation
+            Console.WriteLine("To create your card please enter the size of the board");
             Console.WriteLine("the board size must be a sqaure number for the board to be created");
-            Console.WriteLine("For example 4, 9, 16, 25, etc...");
-            Console.WriteLine("The actual numbers on the card are seqential from 1 - max");
+            Console.WriteLine("For example 2x2 = 4, 3x3 = 9, 4x4 = 16, 5x5 = 25, etc...");
+            Console.WriteLine("The actual numbers on the card are seqential from 1 - max number available per card");
             Console.WriteLine("Now please enter your board size");
+            double userBoardSize = Convert.ToInt32(Console.ReadLine()); 
+            /// need tocheckhere if the number is a perfect sqaure 
+            ///https://jbwyatt.com/Code/Csharp/code/IsPerfect.html something like this - not sure where to put it tho
 
+            if (isSqr(userBoardSize))
+            {
+                g1.addCard(1);
+            }
+            else if (userinput == 2) 
+            {
+                Console.Write("You have not entered a number. . .Goodbye");
+                return;
+            }
 
-
-        }
-
+        
+        
+        
+        
+     
         
     }
 
-    public class Menu {
+     public class Menu {
 
-        ///im not sure what the attributes of menu are yet
-
-            
-    ///======================== constructor
 
         public Menu()
         {
            
         }
 
-        public string startMenu()
-        {
-           
-        }
+       
+    } 
 
-        public string NewGameMenu() 
-        {
-            Console.WriteLine("To creeate your game please enter the size of the board");C
-            Console.WriteLine("the board size must be a sqaure number for the board to be created");
-            Console.WriteLine("For example 4, 9, 16, 25, etc...");
-            Console.WriteLine("The actual numbers on the card are seqential from 1 - max");
-            Console.WriteLine("Now please enter your board size");
-            string v = Console.ReadLine();
-            
-
-        }
-    }
-
-    public class Card {
-
-        public int min;
-        public int max;
-        
-        public List<Card> gameSize; 
-
-
-        /// something for the grid framework herer
-
-
-        public Card()
-        {
-
-        }
-
-        public int Card(int intmin, int intmax)
-        {
-           this.min = intmin;
-           this.max = intmax;
-           
-
-            ///create a board
-            
-        }
-
-        
-    }
-     class Player{
-
-
+    
+       public class Game {
             // attributes
-            string playerName
+         public   int gameNum;
+         public   int numCards;
 
-            // constructor
+         public List<int> newCard;
 
-            // functions
-
-        }
-
-        class Game {
-            // attributes
-            int numPlayers;
-            int numCards;
-
-            int boardSize;
-
-        public Game(int numPlayers, int numCards, int boardSize)
+        ////..................------------....-----------........ CONSTRUCTOR.....
+        public Game(int gameNum, int numCards)
         {
-            this.numPlayers = numPlayers;
+            this.gameNum = gameNum;
             this.numCards = numCards;
-            this.boardSize = boardSize;
         }
 
 
-        // constructor
+        // functions ----------------------------------------------------------------
 
-        // functions
+        public List<int> addCard(int size)
+        {
+            
+            var Card = new List<int>();
+            List<int> lists = Enumerable.Range(1, size).ToList();
+            Card = lists;
+            return lists;
+
+
+        }
+
+
     }
 
 
