@@ -8,9 +8,7 @@ namespace BingoCard
             {
                 static void Main(string[] args)
                 {
-                    var g1 = new Game(1, 1);
-                    ///g1.addCard
-                    var m1 = new Menu(); 
+        
 
                     List<Card> PlayerCard = new List<Card>(25);
                     Player p1 = new Player("Ben Gardiner", PlayerCard);
