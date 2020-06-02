@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace BingoCard
 {
-    public class Player {
+    public class Player
+    {
         ////so this player is just a container for the lst of cards 
-            public string Name;
-            public List<Card> cards;
-
-        public Player(string playerName, List<Card> card)
+        public string Name;
+        public Card card;
+        public Player()
         {
-            this.Name = playerName;
-            this.playerCard = card;
-        } 
-
-        public List<Card> addCard(Card card){
-            this.cardscards = card;
+            //this.Name = playerName;
+            //this.playerCard = card;
         }
 
-      
+        public void AddCard(int boardSize, int minrange, int maxrange)
+        {
+            card = new Card(boardSize, minrange, maxrange);
+        }
+    }
 } 
