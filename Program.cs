@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BingoCard
 {
-            class Program
+    class Program
             {
                 static void Main(string[] args)
                 {
@@ -53,64 +52,10 @@ namespace BingoCard
                         ///need to figure out how to make this reuturn to the top menu
         
                     }
-                    */
+                    
             
                 }
             }    
-    
-    
-    public class Player {
-            public string Name;
-            public List<Card> PlayerCard;
-
-            public Player()
-            {
-                this.Name = "Player 1";
-                this.PlayerCard = new List<Card>();
-            }
-
-            public Player(string name, List<Card> playerCard)
-            {
-                this.Name = name;
-                this.PlayerCard = playerCard;
-            }
-            
-            public static void Writeline(this List<int> theList){
-                foreach (int i in list)
-                {
-                    Console.Write("{0}\t", theList.ToString());
-                }
-                Console.WriteLine();
-            }
-
-            public int markBingoNum(int num)
-            {
-            return 0;  //// this is when the player sleects a number to check off the bingo card
-            }
-
-
-            }
-
-    
-    public class Card {
-            public int CardSize;
-                min
-                max
-            
-            public Card(int CardSize){
-                //// generate a random number and insert into t a list, checking for uniqueness until the liust is gull
-
-                this.CardSize = CardSize;
-                var Card = new List<int>();
-                List<int> lists = Enumerable.Range(1, CardSize).ToList();
-            }
-
-            public int drawCard(){
-                return 0;
-            }
-
-
-            }
 
 
 }
