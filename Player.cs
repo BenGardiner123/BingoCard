@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BingoCard
+/* namespace BingoCard
 {
     public class Player {
         ////so this player is just a container for the lst of cards 
@@ -12,11 +12,11 @@ namespace BingoCard
         {
             this.Name = playerName;
             this.playerCard = card;
-        } */
+        } 
 
         public List<Card> addCard(Card card){
             this.cardscards = card;
         }
 
       
-}
+} */

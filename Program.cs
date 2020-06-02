@@ -11,9 +11,8 @@ namespace BingoCard
 
                    /*  List<Card> PlayerCard = new List<Card>(25);
                     Player p1 = new Player("Ben Gardiner", PlayerCard); */
-
+                    Card c1 = new Card(36, 1, 500);
                     
-
                  
                     
             

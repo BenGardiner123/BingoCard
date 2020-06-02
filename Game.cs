@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+/*
 namespace BingoCard
 {
-    public class Game
+     public class Game
     {
         public string playerName;
-        public 
+        
 
         // attributes
 
@@ -20,9 +20,9 @@ namespace BingoCard
 
         // methods ----------------------------------------------------------------
 
-        public string startMenu()
+        public void startMenu()
         {
-
+            
             Console.WriteLine("Welcome to Bingo");
             Console.WriteLine("Please enter your name ");
             Console.WriteLine("Please enter your selcection");
@@ -41,7 +41,7 @@ namespace BingoCard
             }
 
 
-            public string createCardMenu()
+            public void createCardMenu()
             {
 
 
@@ -92,3 +92,4 @@ namespace BingoCard
 
             }
 
+ */
