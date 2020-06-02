@@ -6,7 +6,8 @@ namespace BingoCard
 {
     public class Game
     {
-        private readonly string playerName;
+        public string playerName;
+        public 
 
         // attributes
 
@@ -21,7 +22,7 @@ namespace BingoCard
 
         public string startMenu()
         {
-            
+
             Console.WriteLine("Welcome to Bingo");
             Console.WriteLine("Please enter your name ");
             Console.WriteLine("Please enter your selcection");

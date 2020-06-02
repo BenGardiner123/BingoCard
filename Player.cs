@@ -8,9 +8,15 @@ namespace BingoCard
             public string Name;
             public List<Card> cards;
 
-        public Player(Card card)
+        /* public Player(string playerName, List<Card> card)
         {
-        }
-    }
+            this.Name = playerName;
+            this.playerCard = card;
+        } */
 
+        public List<Card> addCard(Card card){
+            this.cardscards = card;
+        }
+
+      
 }
