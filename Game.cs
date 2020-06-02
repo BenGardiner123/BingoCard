@@ -1,53 +1,62 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BingoCard
 {
-    public class Game {
-        // attributes
-        public   int gameNum;
-        public   int numCards;
+    public class Game
+    {
+        private readonly string playerName;
 
-        public List<int> newCard;
+        // attributes
 
         ////..................------------....-----------........ CONSTRUCTOR.....
-        public Game(int gameNum, int numCards)
+        public Game(string playerName)
         {
-            this.gameNum = gameNum;
-            this.numCards = numCards;
+            this.playerName = playerName;
         }
 
 
-        // functions ----------------------------------------------------------------
+        // methods ----------------------------------------------------------------
 
-        public List<int> addCard(int size)
+        public string startMenu()
         {
-            
-            var Card = new List<int>();
-            List<int> lists = Enumerable.Range(1, size).ToList();
-            Card = lists;
-            return lists;
 
-
-        }
+            Console.WriteLine("Welcome to Bingo");
+            Console.WriteLine("Please enter your name ");
+            Console.WriteLine("Please enter your selcection");
+            Console.WriteLine("1. Create New Bingo Card");
+            Console.WriteLine("2. Exit");
+            ///insert menu check here
+                    var userinput = 1; Convert.ToInt32(Console.ReadLine());  
+                    if (userinput == 1)
+                    {
+                        createCardMenu();
+                    }
+                    else if (userinput == 2) 
+                    {
+                        Console.Write("You have not entered a number. . .Goodbye");
+                        startMenu();
+                    }
 
         
+public string createCardMenu()
+{
+
+}
+
+public string viewCardMEnu()
+{
+
+}
+
+public string MArkCardoffMenu()
+{
+
+}
 
 
-    }
 
         
 }
 
-/* var userinput = Console.ReadLine();
-            int menuCheck;
-            bool correctInput = int.TryParse(userinput, out menuCheck);
-            if (correctInput)
-            {
-                Menu();
-            }
-            else 
-            {
-                Console.Write("You have not entered a number. . .Goodbye");
-            }
- */
