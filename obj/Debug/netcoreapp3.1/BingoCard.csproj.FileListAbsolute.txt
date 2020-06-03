@@ -11,3 +11,16 @@ C:\Users\User\Desktop\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.pdb
 C:\Users\User\Desktop\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.dll
 C:\Users\User\Desktop\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.pdb
 C:\Users\User\Desktop\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.genruntimeconfig.cache
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.exe
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.deps.json
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.runtimeconfig.json
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.runtimeconfig.dev.json
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.dll
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\bin\Debug\netcoreapp3.1\BingoCard.pdb
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.csprojAssemblyReference.cache
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.csproj.CoreCompileInputs.cache
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.AssemblyInfoInputs.cache
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.AssemblyInfo.cs
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.dll
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.pdb
+C:\Users\Cooler Master\Documents\swinburne\BingoCard\obj\Debug\netcoreapp3.1\BingoCard.genruntimeconfig.cache

@@ -33,7 +33,7 @@ namespace BingoCard
             }
             else if (userinput == 2)
             {
-                Console.Write("You have not entered a number. . .Goodbye");
+                Console.Write("So you have chosen death....");
                 return;
             }
         }
@@ -55,16 +55,16 @@ namespace BingoCard
                 Console.WriteLine("Please enter the largest number in range");
                 int maxRange = Convert.ToInt32(Console.ReadLine());
 
-                player.AddCard(userBoardSize, minRange, maxRange);
-                ShowCardGrid(userBoardSize);
+                player.AddCard(userBoardSize, minRange, maxRange);/// here we attch all the data we need for the card to the player
+                ShowCardGrid(userBoardSize); //// here the userboard size the user puts in gets passed to the showcard grid method.
 
                 // game has a player member with a card member which has all valid numbers in the range the user has inputted
 
-                
+
             }
             else
             {
-                Console.WriteLine("Your number was not a sqaure");
+                Console.WriteLine("Your number was not a sqaure");//// sort o the error catch and takes them back to the top again.
                 createCardMenu();
             }
         }
@@ -78,23 +78,26 @@ namespace BingoCard
             int index = 0;
 
             for (int y = 0; y < squareRoot; y++)
+
             {
+
                 bool isFirst = true;
 
                 for (int x = 0; x < squareRoot; x++)
                 {
                     if (isFirst == true)
                     {
-                        Console.WriteLine(player.card.CardNums[index]);
+                        Console.Write("\n" + player.card.CardNums[index]);
+
                         isFirst = false;
                     }
                     else
-                    {
-                        Console.Write(" " + player.card.CardNums[index]);
+                    {       ///// "\t" goes to the next tabspace
+                        Console.Write("\t" + player.card.CardNums[index]);
                     }
-                   
                     index++;
                 }
+
             }
 
 
@@ -130,4 +133,3 @@ namespace BingoCard
     }
 
 }
- 
