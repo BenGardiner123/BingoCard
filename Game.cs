@@ -121,11 +121,23 @@ namespace BingoCard
 
         public string MarkCardMenu()
         {
+            int targetInt = 0;
             Console.WriteLine("Enter your number to mark off ");
-            int targetInt = Convert.ToInt32(Console.ReadLine());
+            targetInt = Convert.ToInt32(Console.ReadLine());
+            
+        }
 
-            
-            
+        public int markCard(int usernum){
+            var output = 0;
+            var x  = player.card.CardNums.Contains(usernum);
+            if (x == true){
+                player.card.CardNums[player.card.CardNums.FindIndex(ind=>ind.Equals(usernum))] =  Convert.ToInt32("-1");
+            }
+            else{
+                Console.WriteLine("Your number does not exist in the card - please try again");
+                MarkCardMenu();
+            }
+            return output;
         }
 
         public bool isSqr(int num)

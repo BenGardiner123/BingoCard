@@ -41,7 +41,14 @@ namespace BingoCard
 
                 CardNums.Add(randCardNum);
             }
-        }      
+
+        }
+
+        
+
+
+
+
     }
 }
 
