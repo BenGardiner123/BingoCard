@@ -61,6 +61,7 @@ namespace BingoCard
                 ShowCardGrid(userBoardSize); //// here the userboard size the user puts in gets passed to the showcard grid method.
 
                 // game has a player member with a card member which has all valid numbers in the range the user has inputted
+                Console.WriteLine("");
                 Console.WriteLine("Would you like to mark a number off your card or exit? ");
                 Console.WriteLine("1. Mark a number off your Bingo Card");
                 Console.WriteLine("2. Exit");
@@ -119,12 +120,12 @@ namespace BingoCard
         }
 
 
-        public string MarkCardMenu()
+        public int MarkCardMenu()
         {
             int targetInt = 0;
             Console.WriteLine("Enter your number to mark off ");
             targetInt = Convert.ToInt32(Console.ReadLine());
-            
+            return targetInt;
         }
 
         public int markCard(int usernum){
@@ -132,6 +133,7 @@ namespace BingoCard
             var x  = player.card.CardNums.Contains(usernum);
             if (x == true){
                 player.card.CardNums[player.card.CardNums.FindIndex(ind=>ind.Equals(usernum))] =  Convert.ToInt32("-1");
+                
             }
             else{
                 Console.WriteLine("Your number does not exist in the card - please try again");
