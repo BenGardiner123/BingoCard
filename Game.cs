@@ -94,12 +94,10 @@ namespace BingoCard
             int index = 0;
 
             for (int y = 0; y < squareRoot; y++)
-
             {
+                bool isFirst = true;  // y= 0
 
-                bool isFirst = true;
-
-                for (int x = 0; x < squareRoot; x++)
+                for (int x = 0; x < squareRoot; x++) // x = 0
                 {
                     if (isFirst == true)
                     {
@@ -111,6 +109,7 @@ namespace BingoCard
                     {       ///// "\t" goes to the next tabspace
                         Console.Write("\t" + player.card.CardNums[index]);
                     }
+
                     index++;
                 }
 
