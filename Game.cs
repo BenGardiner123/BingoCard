@@ -17,7 +17,9 @@ namespace BingoCard
         public void startMenu()
         {
             player = new Player();
-            Console.WriteLine("Welcome to Bingo");
+            Console.WriteLine("*********************");
+            Console.WriteLine("*" + "Welcome to Bingo" + "*");
+            Console.WriteLine("*********************");
             Console.WriteLine("Please enter your name ");
             player.Name = Console.ReadLine();
 
@@ -59,7 +61,20 @@ namespace BingoCard
                 ShowCardGrid(userBoardSize); //// here the userboard size the user puts in gets passed to the showcard grid method.
 
                 // game has a player member with a card member which has all valid numbers in the range the user has inputted
+                Console.WriteLine("Would you like to mark a number off your card or exit? ");
+                Console.WriteLine("1. Mark a number off your Bingo Card");
+                Console.WriteLine("2. Exit");
+                int userinput = Convert.ToInt32(Console.ReadLine());
 
+                if (userinput == 1)
+                {
+                    MarkCardMenu();
+                }
+                else if (userinput == 2)
+                {
+                    Console.Write("So you have chosen death....");
+                    return;
+                }
 
             }
             else
@@ -103,15 +118,15 @@ namespace BingoCard
 
         }
 
-        //public void viewCardMEnu()
-        //{
 
-        //}
+        public string MarkCardMenu()
+        {
+            Console.WriteLine("Enter your number to mark off ");
+            int targetInt = Convert.ToInt32(Console.ReadLine());
 
-        //public string MArkCardoffMenu()
-        //{
-
-        //}
+            
+            
+        }
 
         public bool isSqr(int num)
         {

@@ -20,7 +20,7 @@ namespace BingoCard
             this.CardNums = new List<int>();
 
             // ithink i need togenerate alist of random numbers say 1- 1000 andout them imhere everytime a card gets created i can iterate out whatever range is required making sure they dont repeat
-            // here we create an instance of a random object - YAKEN FROM MY PREVIOUS C# WORKS
+            // here we create an instance of a random object - tAKEN FROM MY PREVIOUS C# WORKS
 
             for (int i = cardMin; i < totalNumreqd + 1; i++)
             {               
