@@ -77,7 +77,7 @@ namespace BingoCard
                     if (userinput == 1)
                     {
                         Console.WriteLine("Enter your number to mark off ");
-                        string targetInt = Console.ReadLine();
+                        int targetInt = Console.Read();
 
                         int index = player.card.CardNums.IndexOf(targetInt); ///this checks ans sees if the targetint is in the list
                         if (index > 0)//if it is there it reurns a "1"
