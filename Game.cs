@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace BingoCard
 {
@@ -8,7 +9,7 @@ namespace BingoCard
     {
         //public string playerName;
         public Player player;
-
+        private int userBoardSize = 0;
         public Game()
         {
             //this.playerName = playerName;
@@ -47,7 +48,7 @@ namespace BingoCard
             Console.WriteLine("For example 2x2 = 4, 3x3 = 9, 4x4 = 16, 5x5 = 25, etc...");
             Console.WriteLine("The actual numbers on the card are seqential from 1 - max number available per card");
             Console.WriteLine("Now please enter your board size");
-            int userBoardSize = Convert.ToInt32(Console.ReadLine());
+            userBoardSize = Convert.ToInt32(Console.ReadLine());
             var truth = isSqr(userBoardSize);
 
             if (truth)
@@ -58,25 +59,59 @@ namespace BingoCard
                 int maxRange = Convert.ToInt32(Console.ReadLine());
 
                 player.AddCard(userBoardSize, minRange, maxRange);/// here we attch all the data we need for the card to the player
-                ShowCardGrid(userBoardSize); //// here the userboard size the user puts in gets passed to the showcard grid method.
+                ShowCardGrid(); //// here the userboard size the user puts in gets passed to the showcard grid method.
 
                 // game has a player member with a card member which has all valid numbers in the range the user has inputted
-                Console.WriteLine("");
-                Console.WriteLine("Would you like to mark a number off your card or exit? ");
-                Console.WriteLine("1. Mark a number off your Bingo Card");
-                Console.WriteLine("2. Exit");
-                int userinput = Convert.ToInt32(Console.ReadLine());
 
-                if (userinput == 1)
-                {
-                    MarkCardMenu();
-                }
-                else if (userinput == 2)
-                {
-                    Console.Write("So you have chosen death....");
-                    return;
-                }
+                bool continuePlaying = true;
+                bool isGameFinished = false;
 
+                Console.WriteLine("\nWould you like to mark a number off your card or exit? ");
+
+                while (continuePlaying == true && isGameFinished == false)
+                {                    
+                    Console.WriteLine("\n1. Mark a number off your Bingo Card");
+                    Console.WriteLine("\n2. Exit");
+                    int userinput = Convert.ToInt32(Console.ReadLine());
+
+                    if (userinput == 1)
+                    {
+                        Console.WriteLine("Enter your number to mark off ");
+                        string targetInt = Console.ReadLine();
+
+                        int index = player.card.CardNums.IndexOf(targetInt);
+                        if (index > 0)
+                        {
+                            player.card.CardNums[index] = "X";
+                            ShowCardGrid();
+
+                            var numberOfXinList = player.card.CardNums.Where(a => a == "X").Count();
+
+                            if (numberOfXinList == userBoardSize)
+                            {
+                                isGameFinished = true;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Your number does not exist in the card - please try again");
+                        }
+                    }
+                    else if (userinput == 2)
+                    {
+                        Console.Write("So you have chosen death....");
+                        continuePlaying = false;
+                    }
+                }
+                
+                if (isGameFinished == true)
+                {
+                    Console.WriteLine("Congratulations you've won the bingo game!");
+                }
+                else if (continuePlaying == false)
+                {
+                    Console.WriteLine("Better luck next time!");
+                }
             }
             else
             {
@@ -85,9 +120,9 @@ namespace BingoCard
             }
         }
 
-        public void ShowCardGrid(int gridsize)  // gridsize was 16
+        public void ShowCardGrid()  // gridsize was 16
         {
-            double squareRoot = Math.Sqrt(gridsize);     // 4
+            double squareRoot = Math.Sqrt(userBoardSize);     // 4
 
             //player.card.cardNums is a list of all the numbers 
 
@@ -95,50 +130,25 @@ namespace BingoCard
 
             for (int y = 0; y < squareRoot; y++)
             {
-                bool isFirst = true;  // y= 0
+                bool isFirst = true;
 
-                for (int x = 0; x < squareRoot; x++) // x = 0
+                for (int x = 0; x < squareRoot; x++)
                 {
                     if (isFirst == true)
                     {
                         Console.Write("\n" + player.card.CardNums[index]);
-
                         isFirst = false;
                     }
                     else
-                    {       ///// "\t" goes to the next tabspace
+                    {
                         Console.Write("\t" + player.card.CardNums[index]);
                     }
 
                     index++;
                 }
-
             }
 
 
-        }
-
-
-        public int MarkCardMenu()
-        {
-            int targetInt = 0;
-            Console.WriteLine("Enter your number to mark off ");
-            targetInt = Convert.ToInt32(Console.ReadLine());
-            return targetInt;
-        }
-
-        public int markCard(int usernum){
-            var output = 0;
-            var x  = player.card.CardNums.Contains(usernum);
-            if (x == true){
-                player.card.CardNums[player.card.CardNums.FindIndex(ind=>ind.Equals(usernum))] =  Convert.ToInt32("-1");
-                
-            }
-            else{
-                Console.WriteLine("Your number does not exist in the card - please try again");
-                MarkCardMenu();
-            }
-            return output;
         }
 
         public bool isSqr(int num)
