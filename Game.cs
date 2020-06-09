@@ -77,10 +77,10 @@ namespace BingoCard
                     if (userinput == 1)
                     {
                         Console.WriteLine("Enter your number to mark off ");
-                        int targetInt = Console.Read();
+                        string targetInt = Console.ReadLine();
 
-                        int index = player.card.CardNums.IndexOf(targetInt); ///this checks ans sees if the targetint is in the list
-                        if (index > 0)//if it is there it reurns a "1"
+                        int index = player.card.CardNums.IndexOf(targetInt);
+                        if (index > 0)
                         {
                             player.card.CardNums[index] = "X";
                             ShowCardGrid();

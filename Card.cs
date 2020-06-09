@@ -25,7 +25,7 @@ namespace BingoCard
             for (int i = cardMin; i < totalNumreqd + 1; i++)
             {               
                 bool validNumber = false; // initialise escape variable 
-                var randCardNum = rand.Next(1, cardMax); // generate random number
+                var randCardNum = rand.Next(1, cardMax).ToString(); // generate random number
 
                 while (validNumber == false) // check if number is valid
                 {                    
@@ -35,7 +35,7 @@ namespace BingoCard
                     }
                     else
                     {
-                        randCardNum = rand.Next(1, cardMax); // otherwise regenerate a new random number
+                        randCardNum = rand.Next(1, cardMax).ToString(); // otherwise regenerate a new random number
                     }
                 }
 
@@ -51,6 +51,7 @@ namespace BingoCard
 
     }
 }
+
 
 
 
